@@ -22,22 +22,20 @@ export async function handler(event) {
         "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        model: "gpt-4.1-mini",
-        input: [
-          {
-            role: "user",
-            content: [
-              { type: "input_text", text: "この車の状態を分析してJSONで返して" },
-              {
-                type: "input_image",
-                image_url: imageBase64
-              }
-            ]
-          }
-        ]
-      })
-    })
+      messages: [
+  {
+    role: "user",
+    content: [
+      { type: "text", text: "この車の状態を分析して" },
+      {
+        type: "image_url",
+        image_url: {
+          url: imageBase64
+        }
+      }
+    ]
+  }
+]
 
     const data = await response.json();
 
