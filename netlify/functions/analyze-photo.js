@@ -29,8 +29,7 @@ export async function handler(event) {
       { type: "text", text: "この車の状態を分析して" },
       {
         type: "image_url",
-        image_url: {
-          url: imageBase64
+        image_url: `data:image/jpeg;base64,${imageBase64}`
         }
       }
     ]
