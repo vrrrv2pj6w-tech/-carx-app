@@ -37,7 +37,7 @@ export async function handler(event) {
           }
         ]
       })
-    });
+    })
 
     const data = await response.json();
 
