@@ -31,7 +31,7 @@ export async function handler(event) {
               { type: "input_text", text: "この車の状態を分析してJSONで返して" },
               {
                 type: "input_image",
-                image_url: `data:image/jpeg;base64,${imageBase64}`
+                image_url: imageBase64
               }
             ]
           }
